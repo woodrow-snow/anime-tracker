@@ -1,0 +1,23 @@
+:root {
+    /* colors */
+    --primary-color: #0A2342;
+    --secondary-color: #E952DE;
+    --accent-1: #F46197;
+    --accent-2: #846C5B;
+    --text-color:#EADEDA;
+
+    /* fonts */
+    --head: 'Klee One', Verdana, Trebuchet, Arial;
+    --body: 'Open Sans', Tahoma, Arial;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+}
+
+body {
+    margin: 1rem;
+}

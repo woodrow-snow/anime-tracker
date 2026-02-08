@@ -1,0 +1,111 @@
+/*************************** Small Screens ***************************/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    & img {
+        width: 75px;
+        height: auto;
+    }
+
+    & a {
+        /* text */
+        text-decoration: none;
+        text-align: center;
+
+        /* color */
+        color: var(--accent-1);
+
+        /* font */
+        font-size: 1.5rem;
+        font-family: var(--head);
+    }
+}
+
+/*************************** Hamburger ***************************/
+
+.hamburger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--secondary);
+    font-size: 2.2rem;
+}
+
+.hamburger::before {
+    content: "\2630";
+
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+}
+
+/*************************** navigation ***************************/
+.navigation {
+    display: none;
+}
+
+.navigation.show {
+    display: block;
+}
+
+.navigation ul {
+    list-style-type: none;
+    font-size: 1.4rem;
+    font-family: var(--body);
+    font-weight: 500;
+    background-color: var(--accent2);
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--primary);
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.navigation a:hover {
+    color: var(--secondary);
+}
+
+.navigation a.current {
+    text-decoration: underline;
+}
+
+/*************************** Larger Screens ***************************/
+@media only screen and (min-width:600px) {
+    /*************************** header ***************************/
+    header {
+        justify-content: left;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+        padding: 0;
+
+        & ul {
+            display: flex;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            padding: .7rem;
+        }
+
+        & li {
+            border-bottom: none;
+        }
+    }
+}
