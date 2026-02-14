@@ -4,6 +4,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 
     & img {
         width: 75px;
@@ -32,7 +33,7 @@ header {
     border: none;
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--secondary);
+    color: var(--text-color);
     font-size: 2.2rem;
 }
 
@@ -60,26 +61,49 @@ header {
     font-family: var(--body);
     font-weight: 500;
     background-color: var(--accent2);
-    margin: 0;
+    margin: 0 0 1rem 0;
     padding: 0;
 }
 
 .navigation li {
     padding: 0.5rem;
-    border-bottom: 1px solid var(--primary);
+    border-bottom: 1px solid var(--accent-1);
+    text-align: center;
+}
+
+.navigation li:first-of-type {
+    border-top: 1px solid var(--accent-1);
 }
 
 .navigation a {
     text-decoration: none;
-    color: var(--primary);
+    color: var(--text-color);
+    font-family: var(--body);
 }
 
 .navigation a:hover {
-    color: var(--secondary);
+    color: var(--secondary-color);
 }
 
 .navigation a.current {
     text-decoration: underline;
+}
+
+/*************************** Footer ***************************/
+footer {
+    /* box model */
+    margin: 1rem 0 0 0;
+    border-top: 1px solid var(--accent-1);
+    padding-top: 1rem;
+
+    /* colors */
+    color: var(--text-color);
+
+    /* font */
+    font-family: var(--body);
+
+    /* text */
+    text-align: center;
 }
 
 /*************************** Larger Screens ***************************/
@@ -107,5 +131,17 @@ header {
         & li {
             border-bottom: none;
         }
+    }
+
+    /*************************** Nav bigger screens ***************************/
+    nav ul {
+        justify-content: space-evenly;
+        align-items: center;
+
+        border: solid 1px var(--accent-1);
+    }
+
+    .navigation li:first-of-type {
+        border: none;
     }
 }

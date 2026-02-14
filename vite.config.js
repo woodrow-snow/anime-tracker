@@ -3,7 +3,15 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   root: "src/",
-
+  server: {
+    proxy: {
+      '/api/anime-facts': {
+        target: 'https://anime-facts-rest-api.herokuapp.com',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api\/anime-facts/, '/api/v1'),
+      },
+    },
+  },
   build: {
     outDir: "../dist",
     rollupOptions: {
