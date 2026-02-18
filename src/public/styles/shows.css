@@ -359,6 +359,10 @@
         margin: 0;
       }
     }
+
+    & #entered-shows{
+      max-width: 1500px;
+    }
   }
 
   #addMain {
