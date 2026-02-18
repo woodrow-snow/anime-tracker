@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Thank you</title>
     <!-- css -->
     <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/head-nav-footer.css">
-    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/shows.css">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,25 +18,19 @@
         rel="stylesheet">
 
     <!-- scripts -->
-    <script src="/js/main.js" type="module"></script>
-  </head>
-  <body>
+    <script src="/js/confirm.js" type="module"></script>
+</head>
+
+<body>
     <header></header>
     <nav id="nav-bar" class="navigation"></nav>
-    <span hidden id="navArea" data-nav="home"></span>
-    <main>
-        <h1>Home</h1>
-      <section id="facts">
-        <h2>Random Fact</h2>
-        <div id="selectedFact"></div>
-      </section>
-      <section id="anime-rec">
-        <h2>Anime Recommendation</h2>
-        <ul id="show-info"></ul>
-        <button id="new-show-btn" class="buttonStyle">New Show</button>
-      </section>
-      <a href="/shows/index.html" id="trackLink" class="anchorButton">Start Tracking!</a>
+    <span hidden id="navArea" data-nav="shows"></span>
+    <main id="confirmMain">
+        <h1>Thank you!</h1>
+        <div id="thankYou"></div>
+        <a href="/shows/index.html" class="anchorButton" id="goBackBtn">Go Back</a>
     </main>
     <footer></footer>
-  </body>
+</body>
+
 </html>

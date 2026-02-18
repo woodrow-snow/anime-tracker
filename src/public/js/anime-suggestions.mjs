@@ -4,7 +4,14 @@ export default class animeSuggestion {
 
     constructor() { }
     
-    async init() {
+    async init(clear = false) {
+        if (clear) {
+            const info = document.querySelector('#show-info');
+            while (info.firstChild) {
+                info.removeChild(info.firstChild);
+            }
+        }
+
         // getting shows data
         this.showsData = await Util.getData('https://api.jikan.moe/v4/anime');
 
@@ -21,7 +28,10 @@ export default class animeSuggestion {
 
     pickShow(shows) {
         const showsLen = shows.length;
-        return shows[Util.getRandomNum(showsLen)];
+        const showId = Util.getRandomNum(showsLen);
+        // testing
+        const show = shows[showId];
+        return show;
     }
 
     displayShow(show) {

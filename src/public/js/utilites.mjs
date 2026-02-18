@@ -68,8 +68,11 @@ Util.getData = async function (url) {
     }
 }
 
-Util.toTitleCase = function (str){
-  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join('');
+Util.toTitleCase = function (str) {
+    const returnStr = str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+    // testing
+    console.log('returnStr: ', returnStr);
+    return returnStr;
 }
 
 function convertToJson(res) {
@@ -84,7 +87,74 @@ function convertToJson(res) {
 
 Util.getRandomNum = function (max, min = 1) {
     max += 1;
-    return Math.floor(Math.random() * max) + min;
+    let num = Math.floor(Math.random() * max) + min;
+    return num;
+}
+
+Util.getLocalStorage = function (varName) {
+    return JSON.parse(localStorage.getItem(varName));
+}
+
+Util.setLocalStorage = function (varName, saveData) {
+    localStorage.setItem(varName, JSON.stringify(saveData));
+}
+
+Util.init = async function () {
+    // loading header, footer, and nav
+    await this.loadHeaderNavFooter();
+    Util.navigation();
+    Util.getDates();
+
+    // ---------- updating where nav is at currently ----------
+    // getting dataset nav from DOM
+    const navArea = document.querySelector('#navArea');
+    const page = navArea.dataset.nav;
+
+    alterCurrentClass(page);
+}
+
+function alterCurrentClass(addToNav) {
+        // getting nav options from DOM
+        const home = document.querySelector('#homeNav');
+        const shows = document.querySelector('#showsNav');
+        const data = document.querySelector('#dataNav');
+
+        if (addToNav === 'home') {
+            // adding current class to home nav option
+            home.classList.add('current');
+
+            // remove current from other nav options
+            shows.classList.remove('current');
+            data.classList.remove('current');
+        }
+        else if(addToNav === 'shows'){
+            // adding current class to  nav option
+            shows.classList.add('current');
+        
+            // remove current from other nav options
+            home.classList.remove('current');
+            data.classList.remove('current');
+        }
+        else if (addToNav === 'data') {
+            // adding current class to  nav option
+            data.classList.add('current');
+        
+            // remove current from other nav options
+            shows.classList.remove('current');
+            home.classList.remove('current');
+        }
+}
+
+Util.createShowDropdown = function (lsname) {
+    // getting data from ls
+    const data = this.getLocalStorage(lsname).data;
+
+    let showSelect = '<option value="">Choose a Show</option>';
+    data.forEach(s => {
+        showSelect += `<option value="${s.id}">${s.name}</option>`;
+    });
+
+    return showSelect;
 }
 
 export { Util };
