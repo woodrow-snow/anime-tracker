@@ -14,7 +14,7 @@ const shows = new animeSuggestion();
 shows.init();
 
 // ---------- getting new show recommendation when requested ----------
-const newShow = document.querySelector('#new-show-btn');
-newShow.addEventListener('click', () => {
-    shows.init(true);
+const newShow = document.querySelector("#new-show-btn");
+newShow.addEventListener("click", () => {
+  shows.init(true);
 });

@@ -1,56 +1,58 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Shows</title>
     <!-- css -->
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/head-nav-footer.css">
-    <link rel="stylesheet" href="/styles/shows.css">
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/head-nav-footer.css" />
+    <link rel="stylesheet" href="/styles/shows.css" />
 
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Klee+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Klee+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- scripts -->
     <script src="/js/shows.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header></header>
     <nav id="nav-bar" class="navigation"></nav>
     <span hidden id="navArea" data-nav="shows"></span>
     <main>
-        <h1>Your Shows</h1>
-        <section id="entered-shows">
-            <h2 class="showHeader">Entered Shows</h2>
-            <h2 class="tableHidden">Your screen is too small right now to view the shows you have entered, turn your screen, or go to a bigger device to view them all</h2>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Where to Watch</th>
-                    <th>Personal Rating</th>
-                    <th>Watched?</th>
-                    <th>Watch Again?</th>
-                    <th>Notes</th>
-                </tr>
-                <!-- other rows will be added with html -->
-            </table>
-        </section>
-        <section id="showUpdate">
-            <h2>Update Shows</h2>
-            <div class="buttons">
-                <a href="/shows/add.html" class="anchorButton">Add a Show</a>
-                <a href="/shows/update.html" class="anchorButton">Update a Show</a>
-            </div>
-        </section>
+      <h1>Your Shows</h1>
+      <section id="entered-shows">
+        <h2 class="showHeader">Entered Shows</h2>
+        <h2 class="tableHidden">
+          Your screen is too small right now to view the shows you have entered,
+          turn your screen, or go to a bigger device to view them all
+        </h2>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Where to Watch</th>
+            <th>Personal Rating</th>
+            <th>Watched?</th>
+            <th>Watch Again?</th>
+            <th>Notes</th>
+          </tr>
+          <!-- other rows will be added with html -->
+        </table>
+      </section>
+      <section id="showUpdate">
+        <h2>Update Shows</h2>
+        <div class="buttons">
+          <a href="/shows/add.html" class="anchorButton">Add a Show</a>
+          <a href="/shows/update.html" class="anchorButton">Update a Show</a>
+        </div>
+      </section>
     </main>
     <footer></footer>
-</body>
-
+  </body>
 </html>

@@ -1,76 +1,81 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Show</title>
     <!-- css -->
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/head-nav-footer.css">
-    <link rel="stylesheet" href="/styles/shows.css">
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/head-nav-footer.css" />
+    <link rel="stylesheet" href="/styles/shows.css" />
 
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Klee+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Klee+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- scripts -->
     <script src="/js/addShow.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header></header>
     <nav id="nav-bar" class="navigation"></nav>
     <span hidden id="navArea" data-nav="shows"></span>
     <main id="addMain">
-        <h1>Add a Show</h1>
-        <form id="addShowForm" method="GET" action="/shows/confirm.html">
-            <label for="name">
-                Name:
-                <input type="text" name="name" id="name" required>
-            </label>
-            <label for="where">
-                Where can you watch this show?:
-                <input type="text" name="where" id="where" >
-            </label>
-            <label for="rating">
-                Personal Rating:
-                <input type="text" name="rating" id="rating" pattern="^(10(\.0)?|[0-9](\.[0-9])?)/10$" placeholder="x/10">
-            </label>
-            <fieldset>
-                <legend>Have you watched this show?</legend>
-                <label for="Yes">
-                    Yes
-                    <input type="radio" name="watched" id="Yes" value="Yes" required>
-                </label>
-                <label for="No">
-                    No
-                    <input type="radio" name="watched" id="No" value="No" required>
-                </label>
-            </fieldset>
-            <fieldset>
-                <legend>Would you watch this show again?</legend>
-                <label for="yes">
-                    Yes
-                    <input type="radio" name="again" id="yes" value="yes" required>
-                </label>
-                <label for="no">
-                    No
-                    <input type="radio" name="again" id="no" value="no" required>
-                </label>
-            </fieldset>
-            <label for="notes">
-                Notes:
-                <textarea name="notes"></textarea>
-            </label>
-            <input type="submit" value="Add your Show" class="buttonStyle">
-            <input type="hidden" value="add" name="from">
-        </form>
+      <h1>Add a Show</h1>
+      <form id="addShowForm" method="GET" action="/shows/confirm.html">
+        <label for="name">
+          Name:
+          <input type="text" name="name" id="name" required />
+        </label>
+        <label for="where">
+          Where can you watch this show?:
+          <input type="text" name="where" id="where" />
+        </label>
+        <label for="rating">
+          Personal Rating:
+          <input
+            type="text"
+            name="rating"
+            id="rating"
+            pattern="^(10(\.0)?|[0-9](\.[0-9])?)/10$"
+            placeholder="x/10"
+          />
+        </label>
+        <fieldset>
+          <legend>Have you watched this show?</legend>
+          <label for="Yes">
+            Yes
+            <input type="radio" name="watched" id="Yes" value="Yes" required />
+          </label>
+          <label for="No">
+            No
+            <input type="radio" name="watched" id="No" value="No" required />
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Would you watch this show again?</legend>
+          <label for="yes">
+            Yes
+            <input type="radio" name="again" id="yes" value="yes" required />
+          </label>
+          <label for="no">
+            No
+            <input type="radio" name="again" id="no" value="no" required />
+          </label>
+        </fieldset>
+        <label for="notes">
+          Notes:
+          <textarea name="notes"></textarea>
+        </label>
+        <input type="submit" value="Add your Show" class="buttonStyle" />
+        <input type="hidden" value="add" name="from" />
+      </form>
     </main>
     <footer></footer>
-</body>
-
+  </body>
 </html>

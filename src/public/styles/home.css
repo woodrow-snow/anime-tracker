@@ -1,74 +1,74 @@
 #facts {
-    /* text */
-    text-align: center;
+  /* text */
+  text-align: center;
 
-    /* color */
-    color: var(--text-color);
+  /* color */
+  color: var(--text-color);
 
-    /* font */
-    font-family: var(--head);
-    
-    /* Box Model */
-    margin: 1rem 0;
+  /* font */
+  font-family: var(--head);
 
-    & #selectedFact img {
-        width: 275px;
-        height: auto;
-        margin: 0.5rem;
-    }
-    
-    & #selectedFact p {
-        font-family: var(--body);
-        font-size: 1.2rem;
-    }
+  /* Box Model */
+  margin: 1rem 0;
+
+  & #selectedFact img {
+    width: 275px;
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  & #selectedFact p {
+    font-family: var(--body);
+    font-size: 1.2rem;
+  }
 }
 
 /*************************** Recommendation ***************************/
 #anime-rec {
-    /* colors */
-    color: var(--text-color);
+  /* colors */
+  color: var(--text-color);
 
-    /* text */
-    text-align: center;
+  /* text */
+  text-align: center;
 
-    & h2 {
-        font-family: var(--head);
+  & h2 {
+    font-family: var(--head);
+  }
+
+  & #show-info {
+    margin: 1rem;
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-family: var(--body);
+
+    & li {
+      padding: 0.5rem;
     }
 
-    & #show-info {
-        margin: 1rem;
-        list-style-type: none;
-        font-size: 1.2rem;
-        font-family: var(--body);
+    & a {
+      color: var(--accent-1);
+      text-decoration: none;
 
-        & li {
-            padding: 0.5rem;
-        }
-
-        & a {
-            color: var(--accent-1);
-            text-decoration: none;
-
-            &:hover {
-                color: var(--text-color);
-                text-decoration: underline;
-            }
-        }
+      &:hover {
+        color: var(--text-color);
+        text-decoration: underline;
+      }
     }
+  }
 }
 
-@media only screen and (min-width:600px) {
-    main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
+@media only screen and (min-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
 
-        & h1 {
-            grid-column: 1/3;
-        }
+    & h1 {
+      grid-column: 1/3;
     }
+  }
 
-        #show-info {
-            text-align: left;
-        }
+  #show-info {
+    text-align: left;
+  }
 }

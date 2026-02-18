@@ -5,10 +5,10 @@ export default defineConfig({
   root: "src/",
   server: {
     proxy: {
-      '/api/anime-facts': {
-        target: 'https://anime-facts-rest-api.herokuapp.com',
+      "/api/anime-facts": {
+        target: "https://anime-facts-rest-api.herokuapp.com",
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api\/anime-facts/, '/api/v1'),
+        rewrite: (path) => path.replace(/^\/api\/anime-facts/, "/api/v1"),
       },
     },
   },
@@ -24,7 +24,7 @@ export default defineConfig({
         show: resolve(__dirname, "src/shows/index.html"),
         showAdd: resolve(__dirname, "src/shows/add.html"),
         showEdit: resolve(__dirname, "src/shows/update.html"),
-        confirm: resolve(__dirname, 'src/shows/confirm.html'),
+        confirm: resolve(__dirname, "src/shows/confirm.html"),
         data: resolve(__dirname, "src/data/index.html"),
       },
     },
