@@ -111,6 +111,14 @@ Util.init = async function () {
     const page = navArea.dataset.nav;
 
     alterCurrentClass(page);
+
+    // adding favicon to head
+    const head = document.querySelector('head');
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.href = '/images/anime-favicon.ico';
+
+    head.append(favicon);
 }
 
 function alterCurrentClass(addToNav) {
@@ -155,6 +163,54 @@ Util.createShowDropdown = function (lsname) {
     });
 
     return showSelect;
+}
+
+Util.createDownloadFile = function (btn) {
+    // getting data from localStorage
+    const data = this.getLocalStorage('savedShows');
+
+    // creating blob
+    const showsBlob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const showsURL = window.URL.createObjectURL(showsBlob);
+
+    btn.href = showsURL;
+    btn.download = 'showsData.json';
+
+    return showsURL;
+}
+
+Util.getDataFromFile = function (event) {
+    return new Promise((resolve, reject) => {
+        // getting file
+        const file = event.target.files[0];
+
+        // getting info off file
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const showsString = e.target.result;
+                
+                // parseing json string
+                try {
+                    const showsData = JSON.parse(showsString);
+                    resolve(showsData);
+                }
+                catch (error) {
+                    console.error('Error parsing data:', error);
+                    reject(error);
+                }
+            }
+
+            reader.onerror = function (e) {
+                console.error('Error reading file:', e.target.error);
+            }
+
+            reader.readAsText(file);
+        } else {
+            console.log('No file selected');
+        }
+    });
 }
 
 export { Util };
